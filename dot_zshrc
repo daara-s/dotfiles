@@ -33,12 +33,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# todo add chez for mac/windows
 # poetry
-# export PATH="/Users/daara/.local/bin:$PATH"
-
-# poetry
-export PATH="/home/daara/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # JDK (used for Spark)
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
@@ -52,7 +48,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # vim
-export EDITOR=/usr/bin/nvim
+export EDITOR=nvim
 
 alias nvimdiff='nvim -d'
 
@@ -61,7 +57,7 @@ if [ -f "/etc/wsl.conf" ]; then
   # Opening browser in Windows via wslu
   export BROWSER=wslview
   # pycharm
-  export PATH="/home/daara/.local/share/JetBrains/Toolbox/scripts:$PATH"
+  export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
   alias wezterm=wezterm.exe
   source ~/.dbx_config
 fi
