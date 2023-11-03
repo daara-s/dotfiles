@@ -32,6 +32,7 @@ source $ZSH/oh-my-zsh.sh
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # poetry
 export PATH="$HOME/.local/bin:$PATH"
@@ -60,4 +61,8 @@ if [ -f "/etc/wsl.conf" ]; then
   export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
   alias wezterm=wezterm.exe
   source ~/.dbx_config
+elif [ "$(uname)" = "Darwin" ]; then
+  alias ynab-split="poetry run -C ~/Projects/ynab-commands ynab-split"
 fi
+
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
