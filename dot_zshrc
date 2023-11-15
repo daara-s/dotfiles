@@ -53,7 +53,11 @@ export EDITOR=nvim
 
 alias nvimdiff='nvim -d'
 
-alias note='$EDITOR "$HOME/.notes/daily-$(date "+%F").md"'
+function _note() {
+  $EDITOR "$HOME/.notes/daily-$(date -d "$1" "+%F").md";
+};
+
+alias note=_note
 
 # WSL
 if [ -f "/etc/wsl.conf" ]; then
