@@ -68,10 +68,13 @@ inoremap <C-k> <Action>(PopupMenu-selectPrev)
 "" ========================================================
 
 
+map <leader>vd <Action>(ToggleDistractionFreeMode)
+let g:WhichKey_views = "<leader>v Pycharm views"
+let g:WhichKey_views_distraction_free = "<leader>vd Toggle distraction free mode"
+
 " Jump around with easymotion
 map <leader>j <Plug>(easymotion-s)
 let g:WhichKeyDesc_easymotion = "<leader>j Jump with Easymotion"
-let g:WhichKeyDesc_easymotion_prefix = "<leader><leader>"
 
 " Open NERDTree (use q to exit)
 map <leader>x :NERDTreeToggle<CR>
@@ -112,10 +115,8 @@ let g:WhichKeyDesc_code_imports = "<leader>co Optimize imports"
 map <leader>ff <action>(GotoFile)
 map <leader>fr <action>(RecentFiles)
 map <leader>fc <action>(FindInPath)
-map <leader><leader> <Action>(RecentFiles)
 map <leader>fl <action>(RecentLocations)
 map <leader>fs <action>(NewScratchFile)
-let g:WhichKeyDesc_file_quickLook = "<leader><leader> Recent files"
 let g:WhichKeyDesc_file_nav = "<leader>f File navigation"
 let g:WhichKeyDesc_file_nav_goto_file = "<leader>ff Go to file"
 let g:WhichKeyDesc_file_nav_goto_content = "<leader>fc Search for file content"
@@ -174,6 +175,15 @@ let g:WhichKeyDesc_errors = "<leader>e Error navigation"
 let g:WhichKeyDesc_errors_next = "<leader>en Go to next error in solution"
 let g:WhichKeyDesc_errors_prev = "<leader>ep Go to previous error in solution"
 
-map <leader>vd <Action>(ToggleDistractionFreeMode)
-let g:WhichKey_views = "<leader>v Views"
-let g:WhichKey_views_distraction_free = "<leader>vd Toggle distraction free mode"
+" Testing
+map <leader>tt <Action>(RunClass)
+map <leader>ts <Action>(Stop)
+map <leader>td <Action>(DebugClass)
+map <leader>tb <Action>(ToggleLineBreakpoint)
+map <leader>ta <Action>(Run)
+let g:WhichKeyDesc_test = "<leader>t Testing"
+let g:WhichKeyDesc_test_run = "<leader>tt Run test"
+let g:WhichKeyDesc_test_stop = "<leader>ts Stop tests"
+let g:WhichKeyDesc_test_debug = "<leader>td Debug test"
+let g:WhichKeyDesc_test_breakpoint = "<leader>tb Toggle breakpoint"
+let g:WhichKeyDesc_test_all = "<leader>ta Run all tests"
