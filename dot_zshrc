@@ -73,3 +73,4 @@ elif [ "$(uname)" = "Darwin" ]; then
 fi
 
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
+  alias sclang="/Applications/SuperCollider.app/Contents/MacOS/sclang"
