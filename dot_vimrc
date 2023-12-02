@@ -3,7 +3,7 @@ filetype on
 filetype plugin on
 filetype indent on
 syntax enable
-colorscheme monokai
+" colorscheme monokai
 
 " tabs
 set shiftwidth=4
@@ -15,6 +15,7 @@ set number
 set nobackup
 set scrolloff=10
 set nowrap
+set visualbell
 
 " search
 set incsearch
@@ -28,4 +29,9 @@ set history=1000
 set wildmenu
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+" Use system clipboard
+set clipboard+=unnamed
+
+let mapleader = " "
 

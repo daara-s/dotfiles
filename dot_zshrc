@@ -53,6 +53,12 @@ export EDITOR=nvim
 
 alias nvimdiff='nvim -d'
 
+function _note() {
+  $EDITOR "$HOME/.notes/daily-$(date -d "$1" "+%F").md";
+};
+
+alias note=_note
+
 # WSL
 if [ -f "/etc/wsl.conf" ]; then
   # Opening browser in Windows via wslu
@@ -60,10 +66,11 @@ if [ -f "/etc/wsl.conf" ]; then
   # pycharm
   export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
   alias wezterm=wezterm.exe
-  source ~/.dbx_config
+  source "$HOME"/.work_dotfiles
+  alias cat=batcat
 elif [ "$(uname)" = "Darwin" ]; then
   alias ynab-split="poetry run -C ~/Projects/ynab-commands ynab-split"
 fi
 
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
-alias sclang="/Applications/SuperCollider.app/Contents/MacOS/sclang"
+  alias sclang="/Applications/SuperCollider.app/Contents/MacOS/sclang"
