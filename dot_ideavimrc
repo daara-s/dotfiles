@@ -74,8 +74,12 @@ nnoremap N Nzzzv
 
 
 map <leader>vd <Action>(ToggleDistractionFreeMode)
-let g:WhichKey_views = "<leader>v Pycharm views"
-let g:WhichKey_views_distraction_free = "<leader>vd Toggle distraction free mode"
+map <leader>vt <Action>(ActivateTerminalToolWindow)
+map <leader>ve <Action>(ActivateEditorToolWindow)
+let g:WhichKeyDesc_views = "<leader>v Views"
+let g:WhichKeyDesc_views_distraction_free = "<leader>vd Toggle distraction free mode"
+let g:WhichKeyDesc_views_terminal = "<leader>vt Toggle terminal window"
+let g:WhichKeyDesc_views_editor = "<leader>ve Toggle editor window"
 
 " Jump around with easymotion
 map <leader>j <Plug>(easymotion-s)
