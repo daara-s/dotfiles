@@ -35,3 +35,5 @@ set clipboard+=unnamed
 
 let mapleader = " "
 
+" Editor
+set textwidth=120
