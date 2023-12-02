@@ -68,9 +68,12 @@ if [ -f "/etc/wsl.conf" ]; then
   alias wezterm=wezterm.exe
   source "$HOME"/.work_dotfiles
   alias cat=batcat
+
 elif [ "$(uname)" = "Darwin" ]; then
   alias ynab-split="poetry run -C ~/Projects/ynab-commands ynab-split"
+
+  [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
+    alias sclang="/Applications/SuperCollider.app/Contents/MacOS/sclang"
+
 fi
 
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
-  alias sclang="/Applications/SuperCollider.app/Contents/MacOS/sclang"
