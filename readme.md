@@ -5,9 +5,8 @@ Pycharm + Ideavim
 * [.ideavimrc](dot_ideavimrc)
 
 ## Terminal
-Neovim (need to move away from LazyVim and rebuild from scratch)
+Vim/Neovim (need to move away from LazyVim and rebuild from scratch)
 * [nvim](private_dot_config/nvim/)
-Vim
 * [.vimrc](dot_vimrc)
 
 ### Shell
@@ -19,6 +18,5 @@ Zsh + oh-my-zsh
 Wezterm (todo add config)
 
 ### Mac
-Kitty
 * [kitty](private_dot_config/kitty/)
 
