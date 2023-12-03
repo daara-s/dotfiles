@@ -51,7 +51,6 @@ export NVM_DIR="$HOME/.nvm"
 # vim
 export EDITOR=nvim
 alias vim=nvim
-
 alias nvimdiff='nvim -d'
 
 function _note() {
@@ -62,19 +61,16 @@ alias note=_note
 alias cat=batcat
 
 # WSL
-if [ -f "/etc/wsl.conf" ]; then
-  # Opening browser in Windows via wslu
-  export BROWSER=wslview
-  # pycharm
-  export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
-  alias wezterm=wezterm.exe
-  source "$HOME"/.work_dotfiles
-
-elif [ "$(uname)" = "Darwin" ]; then
-  alias ynab-split="poetry run -C ~/Projects/ynab-commands ynab-split"
-
-  [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
-    alias sclang="/Applications/SuperCollider.app/Contents/MacOS/sclang"
-
-fi
+{{- if eq .chezmoi.os "linux" }}
+# Opening browser in Windows via wslu
+export BROWSER=wslview
+# pycharm
+export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
+alias wezterm=wezterm.exe
+source "$HOME"/.work_dotfiles
+{{- else if eq .chezmoi.os "darwin" }}
+alias ynab-split="poetry run -C ~/Projects/ynab-commands ynab-split"
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
+  alias sclang="/Applications/SuperCollider.app/Contents/MacOS/sclang"
+{{- end }}
 
