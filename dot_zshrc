@@ -50,6 +50,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # vim
 export EDITOR=nvim
+alias vim=nvim
 
 alias nvimdiff='nvim -d'
 
