@@ -1,0 +1,20 @@
+[init]
+	defaultBranch = master
+[user]
+	name = Daara Shaw
+	email = dev@daara.me
+[merge]
+	tool = "nvim"
+[mergetool]
+  keepBackup = false
+  prompt = false
+[mergetool "nvim"]
+	cmd = nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+[alias]
+  # run git alias-master-as-main on repos to be able to use main instead of master
+  # from https://adamj.eu/tech/2022/10/27/git-how-to-alias-master-as-main/
+	alias-master-as-main = !git symbolic-ref refs/heads/main refs/heads/master && git symbolic-ref refs/remotes/origin/main refs/remotes/origin/master && git switch main
+[push]
+	autoSetupRemote = true
+[help]
+	autocorrect = prompt
