@@ -58,6 +58,7 @@ function _note() {
 };
 
 alias note=_note
+alias cat=batcat
 
 # WSL
 if [ -f "/etc/wsl.conf" ]; then
@@ -67,7 +68,6 @@ if [ -f "/etc/wsl.conf" ]; then
   export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
   alias wezterm=wezterm.exe
   source "$HOME"/.work_dotfiles
-  alias cat=batcat
 
 elif [ "$(uname)" = "Darwin" ]; then
   alias ynab-split="poetry run -C ~/Projects/ynab-commands ynab-split"
