@@ -1,10 +1,15 @@
 [init]
 	defaultBranch = master
 [user]
-	name = Daara Shaw
-	email = dev@daara.me
+	name = "Daara Shaw"
+{{- if eq .chezmoi.os "darwin" }}
+  email = dev@daara.me
+{{- else if eq .chezmoi.os "linux" }}
+  email = "d.shaw@draftkings.com"
+{{- end }}
 [merge]
 	tool = "nvim"
+  conflictstyle = diff3
 [mergetool]
   keepBackup = false
   prompt = false
@@ -18,3 +23,12 @@
 	autoSetupRemote = true
 [help]
 	autocorrect = prompt
+[core]
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+[diff]
+  colorMoved = default
