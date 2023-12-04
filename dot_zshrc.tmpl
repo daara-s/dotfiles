@@ -17,9 +17,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    pyenv
-    poetry
-    python
+    git-prompt
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
@@ -59,6 +57,9 @@ function _note() {
 
 alias note=_note
 alias cat=batcat
+
+autoload -Uz change_directory
+bindkey -s '^f' 'change_directory\n'
 
 # WSL
 {{- if eq .chezmoi.os "linux" }}

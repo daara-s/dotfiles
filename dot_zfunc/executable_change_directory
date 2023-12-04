@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+function change_directory() {
+	if [[ $# -eq 1 ]]; then
+		selected=$1
+	else
+		selected=$(find ~/dev -mindepth 1 -maxdepth 1 -type d | fzf)
+	fi
+
+	if [[ -z $selected ]]; then
+		exit 0
+	fi
+
+	cd "$selected"
+}
