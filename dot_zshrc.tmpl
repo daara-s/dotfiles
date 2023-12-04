@@ -17,7 +17,6 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    git-prompt
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
@@ -57,9 +56,11 @@ function _note() {
 
 alias note=_note
 alias cat=batcat
+alias cb='git switch $(git branch | fzf)'
 
 autoload -Uz change_directory
 bindkey -s '^f' 'change_directory\n'
+bindkey -s '^b' 'cb\n'
 
 # WSL
 {{- if eq .chezmoi.os "linux" }}
