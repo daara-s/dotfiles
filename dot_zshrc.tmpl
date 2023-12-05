@@ -21,16 +21,27 @@ eval "$(pyenv virtualenv-init -)"
 
 export PATH="$HOME/.local/bin:$PATH"  # poetry
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"  # JDK (used for Spark)
-
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export EDITOR=nvim
+export FZF_DEFAULT_OPTS="
+  --multi \
+  --height=~50% \
+  --layout=reverse-list \
+  --border=double \
+  --info=inline \
+  --prompt='$>' \
+  --pointer='→' \
+  --marker='♡' \
+  --header='CTRL-c or ESC to quit' \
+  --color='dark,fg:magenta'
+"
 
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export EDITOR=nvim
 
 alias vim=nvim
 alias nvimdiff='nvim -d'
