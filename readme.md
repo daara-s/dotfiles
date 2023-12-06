@@ -3,6 +3,7 @@
 ## Dev environment
 Pycharm + Ideavim
 * [.ideavimrc](dot_ideavimrc)
+
 Slowly moving to all neovim
 
 ## Terminal
