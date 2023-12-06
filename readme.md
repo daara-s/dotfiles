@@ -3,11 +3,12 @@
 ## Dev environment
 Pycharm + Ideavim
 * [.ideavimrc](dot_ideavimrc)
+Slowly moving to all neovim
 
 ## Terminal
-Vim/Neovim (need to move away from LazyVim and rebuild from scratch)
-* [nvim](private_dot_config/nvim/)
-* [.vimrc](dot_vimrc)
+Vim/Neovim
+* [nvim](private_dot_config/nvim/) (default)
+* [.vimrc](dot_vimrc) (outdated)
 
 ### Shell
 Zsh + oh-my-zsh
