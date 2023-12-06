@@ -22,3 +22,4 @@ vim.keymap.set("x", "<leader>p", [["_dP]], {desc='Paste(again)'})
 
 vim.keymap.set("n", "Q", "<nop>")
 
+vim.keymap.set("v", "<leader>cc", ":norm ", {desc="comment out code with i# or ^x"})
