@@ -13,7 +13,7 @@ Vim/Neovim
 
 ### Shell
 Zsh + oh-my-zsh
-* [.zshrc](dot_zshrc)
+* [.zshrc](dot_zshrc.tmpl)
 * [.zprofile](dot_zprofile)
 
 ### WSL
