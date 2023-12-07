@@ -39,7 +39,10 @@ require('mason-lspconfig').setup({
                 settings = {
                     pylsp = {
                         plugins= {
+                            pyflakes = {enabled = false},
+                            mccabe = {enabled = false},
                             pycodestyle = {
+                                enabled = false,
                                 ignore = {'W391', 'E501'},
                             },
                             rope_autoimport = {
