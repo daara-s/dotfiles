@@ -51,6 +51,8 @@ autoload -Uz change_directory note
 bindkey -s '^f' 'change_directory\n'
 bindkey -s '^b' 'git switch $(git branch | fzf)\n'
 
+eval "$(zoxide init zsh)" # must run after compinit
+
 ### OS specifics
 {{- if eq .chezmoi.os "linux" }}
 
