@@ -14,7 +14,9 @@ end
 
 -- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Mocha"
+{{- if eq .chezmoi.os "linux" }}
 config.default_domain = "WSL:Ubuntu"
+{{- end }}
 config.audible_bell = "Disabled"
 config.font = wezterm.font({
 	family = "FiraCode Nerd Font",
