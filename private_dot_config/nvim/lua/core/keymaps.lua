@@ -13,8 +13,12 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", {desc="move selected code down"})
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", {desc="move selected code up"})
 
 vim.keymap.set("n", "J", "mzJ`z", {desc="append below line to current line"})
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<S-Down>", "<C-d>zz")
+vim.keymap.set("n", "<S-Up>", "<C-u>zz")
+
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
