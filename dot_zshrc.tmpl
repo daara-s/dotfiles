@@ -58,7 +58,7 @@ eval "$(zoxide init zsh)" # must run after compinit
 {{- if eq .chezmoi.os "linux" }}
 
 function _note() {
-  $EDITOR "$HOME/.notes/daily-$(date -d "$1" "+%F").md";
+  $EDITOR "$HOME/.notes/2024/daily-$(date -d "$1" "+%F").md";
 };
 
 source "$HOME"/.work_dotfiles
