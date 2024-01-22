@@ -8,18 +8,18 @@
   email = "d.shaw@draftkings.com"
 {{- end }}
 [merge]
-	tool = "nvim"
+  tool = "nvim"
   conflictstyle = diff3
 [mergetool]
   keepBackup = false
   prompt = false
 [mergetool "nvim"]
-	cmd = nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+  cmd = nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
 [push]
-	autoSetupRemote = true
-    default = current
+  autoSetupRemote = true
+  default = current
 [help]
-	autocorrect = prompt
+  autocorrect = prompt
 [core]
   pager = delta
 [interactive]
@@ -29,4 +29,4 @@
   light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 [diff]
   colorMoved = default
-	algorithm = histogram
+  algorithm = histogram
