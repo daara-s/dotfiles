@@ -15,10 +15,3 @@ Vim/Neovim
 Zsh + oh-my-zsh
 * [.zshrc](dot_zshrc.tmpl)
 * [.zprofile](dot_zprofile)
-
-### WSL
-Wezterm (todo add config)
-
-### Mac
-* [kitty](private_dot_config/kitty/)
-
