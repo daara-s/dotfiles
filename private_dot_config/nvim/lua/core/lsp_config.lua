@@ -43,6 +43,7 @@ require('mason-lspconfig').setup({
         default_setup,
         pylsp = function ()
             require('lspconfig').pylsp.setup({
+                capabilities = lsp_capabilities,
                 settings = {
                     pylsp = {
                         plugins= {
@@ -50,6 +51,7 @@ require('mason-lspconfig').setup({
                             mccabe = {enabled = false},
                             pycodestyle = {enabled = false},
                             rope_autoimport = {enabled = true},
+                            jedi_completions = {include_params = true},
                         }
                     }
                 }
