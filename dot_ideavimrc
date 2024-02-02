@@ -69,6 +69,10 @@ nnoremap <C-f> <C-f>zz
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
+"jump to errors
+nnoremap [d :action GotoPreviousError<cr>
+nnoremap ]d :action GotoNextError<cr>
+
 "" Leader commands
 "" ========================================================
 

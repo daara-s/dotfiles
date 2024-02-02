@@ -30,6 +30,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
+-- todo
+-- is this bit working?
+-- what should it be doing?
 local default_setup = function(server)
     lspconfig[server].setup({
         capabilities = lsp_capabilities,
@@ -83,12 +86,16 @@ local cmp = require('cmp')
 
 cmp.setup({
     sources = {
-        {name = 'nvim_lsp'},
+        {name = 'nvim_lsp', max_item_count = 8, keyword_length = 2},
+        {name = 'buffer', max_item_count = 2},
+        -- should add {name='luasnip'},?
     },
     mapping = cmp.mapping.preset.insert({
         -- Enter key confirms completion item
-        ['<CR>'] = cmp.mapping.confirm({select = false}),
-
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-e>'] = cmp.mapping.abort(),
         -- Ctrl + space triggers completion menu
         ['<C-Space>'] = cmp.mapping.complete(),
     }),
