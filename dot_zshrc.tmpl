@@ -39,6 +39,14 @@ export FZF_DEFAULT_OPTS="
   --header='CTRL-c or ESC to quit' \
   --color='dark,fg:magenta'
 "
+export FZF_DEFAULT_COMMAND="
+  fd --type f \
+  --strip-cwd-prefix \
+  --hidden \
+  --follow \
+  --exclude .git \
+  --exclude=__pycache__
+"
 
 autoload -Uz compinit
 zstyle ':completion:*' menu select
