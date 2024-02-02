@@ -106,18 +106,31 @@ cmp.setup({
     },
 })
 
+local telescope = require("telescope")
 -- This is your opts table
-require("telescope").setup {
+telescope.setup {
     defaults = {
-        path_display = {'truncate'},
+        path_display = {
+            shorten = {
+                len=1,
+                exclude={1, -1, -2}
+            },
+        },
     },
     extensions = {
         ["ui-select"] = {
             require("telescope.themes").get_dropdown {
             }
+        },
+        fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
         }
-    }
+    },
 }
 -- To get ui-select loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
-require("telescope").load_extension("ui-select")
+telescope.load_extension("ui-select")
+telescope.load_extension('fzf')
