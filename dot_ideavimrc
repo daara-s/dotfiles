@@ -4,9 +4,9 @@ set relativenumber
 set showmode
 set showcmd
 
-set smartcase
 set incsearch
-set hlsearch
+set nohlsearch
+set ignorecase
 
 set visualbell
 
