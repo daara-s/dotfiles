@@ -4,9 +4,9 @@ set relativenumber
 set showmode
 set showcmd
 
-set smartcase
 set incsearch
-set hlsearch
+set nohlsearch
+set ignorecase
 
 set visualbell
 
@@ -68,6 +68,10 @@ nnoremap <C-f> <C-f>zz
 
 nnoremap n nzzzv
 nnoremap N Nzzzv
+
+"jump to errors
+nnoremap [d :action GotoPreviousError<cr>
+nnoremap ]d :action GotoNextError<cr>
 
 "" Leader commands
 "" ========================================================

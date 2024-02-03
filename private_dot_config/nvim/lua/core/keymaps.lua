@@ -1,10 +1,14 @@
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc='Find files'})
-vim.keymap.set('n', '<leader>fg', builtin.git_files, {desc='Find git files'})
-vim.keymap.set('n', '<leader>fc', builtin.live_grep, {desc='Find code'})
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[f]ind [f]iles' })
+vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = '[f]ind [g]it files' })
+vim.keymap.set('n', '<leader>sc', builtin.live_grep, { desc = '[s]earch [c]ode' })
+vim.keymap.set('n', '<leader>fc',
+    function() builtin.find_files({ cwd = vim.fn.stdpath("config") }) end,
+    { desc = '[f]ind [c]onfig' }
+)
 
 
-vim.keymap.set("n", '<leader>fd', vim.cmd.Ex, {desc='Directory'})
+vim.keymap.set("n", '<leader>fd', vim.cmd.Ex, {desc='[f]ind [d]irectory'})
 
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, {desc='Undotree'})
 

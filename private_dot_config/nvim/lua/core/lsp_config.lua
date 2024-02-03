@@ -8,17 +8,21 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
         vim.keymap.set('n', 'gK', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-        vim.keymap.set('n', 'gd', function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end,
+        vim.keymap.set('n', 'gd',
+            function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end,
             { buffer = event.buf, desc = 'Goto Definition' })
         vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-        vim.keymap.set('n', 'gI', function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end,
+        vim.keymap.set('n', 'gI',
+            function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end,
             { buffer = event.buf, desc = 'Goto Implementation' })
-        vim.keymap.set('n', 'gy', function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end,
+        vim.keymap.set('n', 'gy',
+            function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end,
             { buffer = event.buf, desc = 'Goto T[y]pe Definition' })
         vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', opts)
         vim.keymap.set('n', '<leader>cr', '<cmd>lua vim.lsp.buf.rename()<cr>',
             { buffer = event.buf, desc = 'Rename' })
-        vim.keymap.set({ 'n', 'x' }, '<leader>cf', function() vim.lsp.buf.format({ async = true }) end,
+        vim.keymap.set({ 'n', 'x' }, '<leader>cf',
+            function() vim.lsp.buf.format({ async = true }) end,
             { buffer = event.buf, desc = 'Format code' })
         vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>',
             { buffer = event.buf, desc = 'Code action' })
@@ -30,6 +34,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
+-- todo
+-- is this bit working?
+-- what should it be doing?
 local default_setup = function(server)
     lspconfig[server].setup({
         capabilities = lsp_capabilities,
@@ -83,12 +90,16 @@ local cmp = require('cmp')
 
 cmp.setup({
     sources = {
-        {name = 'nvim_lsp'},
+        {name = 'nvim_lsp', max_item_count = 8, keyword_length = 2},
+        {name = 'buffer', max_item_count = 2},
+        -- should add {name='luasnip'},?
     },
     mapping = cmp.mapping.preset.insert({
         -- Enter key confirms completion item
-        ['<CR>'] = cmp.mapping.confirm({select = false}),
-
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-e>'] = cmp.mapping.abort(),
         -- Ctrl + space triggers completion menu
         ['<C-Space>'] = cmp.mapping.complete(),
     }),
@@ -99,18 +110,31 @@ cmp.setup({
     },
 })
 
+local telescope = require("telescope")
 -- This is your opts table
-require("telescope").setup {
+telescope.setup {
     defaults = {
-        path_display = {'truncate'},
+        path_display = {
+            shorten = {
+                len=1,
+                exclude={1, -1, -2}
+            },
+        },
     },
     extensions = {
         ["ui-select"] = {
             require("telescope.themes").get_dropdown {
             }
+        },
+        fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
         }
-    }
+    },
 }
 -- To get ui-select loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
-require("telescope").load_extension("ui-select")
+telescope.load_extension("ui-select")
+telescope.load_extension('fzf')
