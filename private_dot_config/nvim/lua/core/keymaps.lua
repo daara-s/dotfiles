@@ -31,3 +31,5 @@ vim.keymap.set("x", "<leader>p", [["_dP]], {desc='Paste(again)'})
 vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("v", "<leader>cc", ":norm ", {desc="comment out code with i# or ^x"})
+
+vim.keymap.set("n", "<leader>t", ":norm [m<CR>wyiw <C-O> :!pytest -k \"<C-R>0\"<CR>", {desc="pytest this function"})
