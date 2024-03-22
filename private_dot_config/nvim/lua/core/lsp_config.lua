@@ -45,21 +45,16 @@ end
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = {"pylsp", "ruff_lsp", "lua_ls"},
+    ensure_installed = {"pyright", "ruff_lsp", "lua_ls"},
     handlers = {
         default_setup,
-        pylsp = function ()
-            require('lspconfig').pylsp.setup({
+        pyright = function()
+            require('lspconfig').pyright.setup({
                 capabilities = lsp_capabilities,
                 settings = {
-                    pylsp = {
-                        plugins= {
-                            pyflakes = {enabled = false},
-                            mccabe = {enabled = false},
-                            pycodestyle = {enabled = false},
-                            rope_autoimport = {enabled = true},
-                            jedi_completions = {include_params = true},
-                        }
+                    pyright = {
+                        -- eg disableOrganiseImport = true,
+                        typeCheckingMode = "off",
                     }
                 }
             })
