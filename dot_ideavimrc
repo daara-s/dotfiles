@@ -113,13 +113,13 @@ let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposit
 
 " Actions
 map <leader>cc <action>(CommentByLineComment)
-map <leader>cm <action>(ShowIntentionActions)
+map <leader>ca <action>(ShowIntentionActions)
 map <leader>cs <action>(SearchEverywhere)
 map <leader>cf <action>(ReformatCode)
 map <leader>co <action>(OptimizeImports)
 let g:WhichKeyDesc_code= "<leader>c Code"
 let g:WhichKeyDesc_code_comment = "<leader>cc Comment line"
-let g:WhichKeyDesc_code_context_menu = "<leader>cm Context menu"
+let g:WhichKeyDesc_code_context_menu = "<leader>ca Code action"
 let g:WhichKeyDesc_code_search = "<leader>cs command modal"
 let g:WhichKeyDesc_code_format = "<leader>cf Format code"
 let g:WhichKeyDesc_code_imports = "<leader>co Optimize imports"
