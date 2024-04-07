@@ -56,6 +56,7 @@ fpath+=~/.zfunc
 
 
 alias vim=nvim
+alias cat=bat
 alias nvimdiff='nvim -d'
 alias cm=chezmoi
 alias vf='vim $(fzf)'
@@ -71,29 +72,20 @@ bindkey -s '^b' 'git switch $(git branch | fzf)\n'
 eval "$(zoxide init zsh)" # must run after compinit
 
 ### OS specifics
-{{- if eq .chezmoi.os "linux" }}
+{{- if eq .chezmoi.hostname "dkadmin-MTF9WQPC2P" }}
 
 function _note() {
   $EDITOR "$HOME/.notes/2024/daily-$(date -d "$1" "+%F").md";
 };
-
+alias note=_note
 source "$HOME"/.work_dotfiles
 
-export BROWSER=wslview
-export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
-
-alias wezterm=wezterm.exe
-alias cat=batcat
-alias note=_note
-
-{{- else if eq .chezmoi.os "darwin" }}
+{{- else }}
 
 alias ynab-split="poetry run -C ~/dev/ynab-commands ynab-split"
 
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
   alias sclang="/Applications/SuperCollider.app/Contents/MacOS/sclang"
-
-alias cat=bat
 
 {{- end }}
 
