@@ -6,8 +6,9 @@ return {
     { 'hrsh7th/nvim-cmp' },
     {
         'L3MON4D3/LuaSnip',
-        build = "make install_jsregexp"
+        build = "make install_jsregexp",
+        dependencies = { "rafamadriz/friendly-snippets" },
+
     },
-    { 'hrsh7th/cmp-buffer'},
-    { "rafamadriz/friendly-snippets" },
+    { 'hrsh7th/cmp-buffer' },
 }
