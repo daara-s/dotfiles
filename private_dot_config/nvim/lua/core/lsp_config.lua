@@ -1,6 +1,6 @@
 local lspconfig = require('lspconfig')
-
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
     callback = function(event)
@@ -94,7 +94,7 @@ cmp.setup({
     sources = {
         { name = 'nvim_lsp', max_item_count = 8, keyword_length = 2 },
         { name = 'buffer',   max_item_count = 2 },
-        -- should add {name='luasnip'},
+        { name = 'luasnip' },
     },
     mapping = {
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
