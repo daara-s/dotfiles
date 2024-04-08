@@ -5,10 +5,10 @@
 	defaultBranch = master
 [user]
 	name = "Daara Shaw"
-{{- if eq .chezmoi.os "darwin" }}
-  email = dev@daara.me
-{{- else if eq .chezmoi.os "linux" }}
-  email = "d.shaw@draftkings.com"
+{{- if eq .chezmoi.hostname "dkadmin-MTF9WQPC2P" }}
+   email = "d.shaw@draftkings.com"
+{{- else }}
+   email = "dev@daara.me"
 {{- end }}
 [merge]
   tool = "nvim"
