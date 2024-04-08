@@ -54,7 +54,11 @@ autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
 
+function _note() {
+  $EDITOR "$HOME/.notes/2024/daily-$(date -I).md";
+};
 
+alias note=_note
 alias vim=nvim
 alias cat=bat
 alias nvimdiff='nvim -d'
@@ -64,20 +68,18 @@ alias ls=eza
 alias ll='eza --long'
 alias tree='eza --tree'
 
-autoload -Uz change_directory note
+autoload -Uz change_directory
 
 bindkey -s '^f' 'change_directory\n'
 bindkey -s '^b' 'git switch $(git branch | fzf)\n'
+bindkey '^I'   complete-word       # tab          | complete
+bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 
 eval "$(zoxide init zsh)" # must run after compinit
 
 ### OS specifics
 {{- if eq .chezmoi.hostname "dkadmin-MTF9WQPC2P" }}
 
-function _note() {
-  $EDITOR "$HOME/.notes/2024/daily-$(date -d "$1" "+%F").md";
-};
-alias note=_note
 source "$HOME"/.work_dotfiles
 
 {{- else }}
