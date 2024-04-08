@@ -2,5 +2,3 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(pyenv init --path)"
-{{- if eq .chezmoi.hostname "dkadmin-MTF9WQPC2P" }}
-    export WORK=true
