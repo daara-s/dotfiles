@@ -1,0 +1,11 @@
+{
+    "new version": {
+        "prefix": "version",
+        "body": [
+            "## [${1:version}]",
+            "### ${2:type}",
+            "- ${3:changes}"
+        ],
+        "description": "Add a new changelog version"
+    }
+}
