@@ -1,5 +1,3 @@
--- Chezmoi Template file - DO NOT EDIT DIRECTLY --
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -31,19 +29,4 @@ vim.opt.textwidth = 120
 vim.opt.splitright = true
 vim.g.netrw_liststyle = 3
 
-{{- if eq .chezmoi.os "linux" }}
-vim.cmd([[
-let g:clipboard = {
-\   'name': 'WslClipboard',
-\   'copy': {
-\      '+': 'clip.exe',
-\      '*': 'clip.exe',
-\    },
-\   'paste': {
-\      '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-\      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-\   },
-\   'cache_enabled': 0,
-\ }
-]])
-{{- end }}
+vim.api.nvim_set_option("clipboard","unnamedplus")
