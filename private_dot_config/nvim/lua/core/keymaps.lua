@@ -1,16 +1,4 @@
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[f]ind [f]iles' })
-vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = '[f]ind [g]it files' })
-vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[s]earch [g]rep' })
-vim.keymap.set('n', '<leader>fc',
-    function() builtin.find_files({ cwd = vim.fn.stdpath("config") }) end,
-    { desc = '[f]ind [c]onfig' }
-)
-
-
 vim.keymap.set("n", '<leader>fd', vim.cmd.Ex, {desc='[f]ind [d]irectory'})
-
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, {desc='Undotree'})
 
 -- move selected code up/down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", {desc="move selected code down"})
