@@ -81,6 +81,8 @@ eval "$(zoxide init zsh)" # must run after compinit
 {{- if eq .chezmoi.hostname "dkadmin-MTF9WQPC2P" }}
 
 source "$HOME"/.work_dotfiles
+export PATH="$HOME/.dotnet/tools:$PATH"
+
 
 {{- else }}
 
