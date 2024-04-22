@@ -23,7 +23,7 @@ return {
                 handlers = {
                     default_setup,
                     pyright = function()
-                        require('lspconfig').pyright.setup({
+                        lspconfig.pyright.setup({
                             capabilities = lsp_capabilities,
                             settings = {
                                 pyright = {
@@ -34,7 +34,7 @@ return {
                         })
                     end,
                     lua_ls = function()
-                        require('lspconfig').lua_ls.setup({
+                        lspconfig.lua_ls.setup({
                             settings = {
                                 Lua = {
                                     runtime = {
