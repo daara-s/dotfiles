@@ -10,9 +10,9 @@ return {
         local telescope = require("telescope")
         local builtin = require('telescope.builtin')
 
-        vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[f]ind [f]iles' })
-        vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = '[f]ind [g]it files' })
-        vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[s]earch [g]rep' })
+        vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+        vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = '[F]ind [G]it files' })
+        vim.keymap.set('n', '<leader>fc', builtin.live_grep, { desc = '[F]ind [C]ode' })
         -- This is your opts table
         telescope.setup {
             defaults = {

@@ -1,4 +1,4 @@
-vim.keymap.set("n", '<leader>fd', ":Oil<CR>", {desc='[f]ind [d]irectory'})
+vim.keymap.set("n", '<leader>fd', ":Oil<CR>", {desc='[F]ind [D]irectory'})
 
 -- move selected code up/down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", {desc="move selected code down"})

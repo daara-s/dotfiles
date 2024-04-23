@@ -7,7 +7,9 @@ return {
   end,
   opts = {
 	defaults = {
-        ["<leader>f"] = { name = "+file/find" },
+        ["<leader>f"] = { name = "Find" },
+        ["<leader>c"] = { name = "Code" },
+        ["<leader>t"] = { name = "Test" },
 
 	},
   },
