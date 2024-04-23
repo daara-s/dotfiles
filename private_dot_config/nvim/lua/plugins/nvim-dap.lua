@@ -4,10 +4,11 @@ return {
         dependencies = { 'mfussenegger/nvim-dap-python' },
         config = function()
             local dap = require 'dap'
+            local python_path = os.getenv("VIRTUAL_ENV") and os.getenv("VIRTUAL_ENV") .. "/bin/python" or "python"
 
             dap.adapters.python = {
                 type = 'executable',
-                command = os.getenv("VIRTUAL_ENV") .. "/bin/python",
+                command = python_path,
                 args = { '-m', 'debugpy.adapter' },
             }
             dap.configurations.python = {
@@ -17,7 +18,7 @@ return {
                     name = "Launch file",
                     program = "${file}",
                     cwd = "${workspaceFolder}",
-                    pythonPath = os.getenv("VIRTUAL_ENV") .. "/bin/python",
+                    pythonPath = python_path,
                 },
             }
             -- pneumonic debug continue
