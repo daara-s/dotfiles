@@ -1,4 +1,4 @@
-vim.keymap.set("n", '<leader>fd', vim.cmd.Ex, {desc='[f]ind [d]irectory'})
+vim.keymap.set("n", '<leader>fd', ":Oil<CR>", {desc='[f]ind [d]irectory'})
 
 -- move selected code up/down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", {desc="move selected code down"})
@@ -20,4 +20,4 @@ vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("v", "<leader>cc", ":norm ", {desc="comment out code with i# or ^x"})
 
-vim.keymap.set("n", "<leader>t", ":norm [m<CR>wyiw <C-O> :!pytest -k \"<C-R>0\"<CR>", {desc="pytest this function"})
+-- vim.keymap.set("n", "<leader>t", ":norm [m<CR>wyiw <C-O> :!pytest -k \"<C-R>0\"<CR>", {desc="pytest this function"})
