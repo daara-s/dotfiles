@@ -16,7 +16,7 @@ end
 config.color_scheme = "Catppuccin Mocha"
 config.audible_bell = "Disabled"
 config.font = wezterm.font({
-	family = "FiraCode Nerd Font",
+	family = "JetBrains Mono",
 	harfbuzz_features = { "ss02" },
 })
 config.keys = {
