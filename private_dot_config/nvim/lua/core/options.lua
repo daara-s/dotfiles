@@ -24,7 +24,6 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "120"
 vim.opt.textwidth = 120
 vim.opt.splitright = true
 vim.g.netrw_liststyle = 3
