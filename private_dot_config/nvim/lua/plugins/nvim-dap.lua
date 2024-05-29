@@ -26,7 +26,7 @@ return {
             -- pneumonic debug into
             vim.keymap.set('n', '<leader>di', dap.step_into, { desc = '[D]ebug [I]nto' })
             -- pneumonic debug over
-            vim.keymap.set('n', '<leader>do', dap.step_out, { desc = '[D]ebug [O]ver' })
+            vim.keymap.set('n', '<leader>do', dap.step_out, { desc = '[D]ebug [O]ut' })
             -- pneumonic debug continue
             vim.keymap.set('n', '<leader>dc', dap.continue, { desc = '[D]ebug [C]ontinue' })
             -- pneumonic b - break
@@ -62,20 +62,20 @@ return {
                 layouts = {
                     {
                         elements = {
-                            { id = "repl",   size = 0.6 },
-                            { id = "scopes", size = 0.4 },
+                            { id = "repl",   size = 0.5 },
+                            { id = "scopes", size = 0.5 },
                         },
                         position = "bottom",
                         size = 20
                     },
                     {
                         elements = {
-                            { id = "stacks",      size = 0.25 },
-                            { id = "breakpoints", size = 0.25 },
-                            { id = "console",     size = 0.25 },
+                            { id = "stacks",      size = 0.33 },
+                            { id = "breakpoints", size = 0.33 },
+                            { id = "console",     size = 0.33 },
                         },
                         position = "right",
-                        size = 40
+                        size = 30
                     }
                 },
             }
