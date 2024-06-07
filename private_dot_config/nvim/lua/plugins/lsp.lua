@@ -52,6 +52,15 @@ return {
                             }
                         })
                     end,
+                    ruff_lsp = function ()
+                        lspconfig.ruff_lsp.setup({
+                            init_options = {
+                                settings = {
+                                    fixAll = true,
+                                }
+                            }
+                        })
+                    end,
                 },
             })
         end
