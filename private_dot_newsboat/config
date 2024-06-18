@@ -1,7 +1,7 @@
 include ~/.newsboat/dark
 
 text-width 80
-browser "open -g"
+browser "open"
 auto-reload no
 show-read-feeds no
 show-keymap-hint yes
