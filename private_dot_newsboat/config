@@ -1,16 +1,34 @@
-unbind-key g # bound to `sort` by default
-bind-key g home
-unbind-key G # bound to `rev-sort` by default
-bind-key G end
+include ~/.newsboat/dark
 
-unbind-key h
-unbind-key j
-unbind-key k
-unbind-key l
+text-width 80
+browser "open -g"
+auto-reload no
+show-read-feeds no
+show-keymap-hint yes
+prepopulate-query-feeds yes
+max-items 50  # max-items per feed (perf reasons)
 
-bind-key h quit
 bind-key j down
 bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key G end
+bind-key g home
+bind-key e enqueue
 bind-key l open
-
-include ~/.newsboat/dark
+bind-key h quit
+bind-key n next-unread
+bind-key N prev-unread
+bind-key D pb-download
+bind-key U show-urls
+bind-key x pb-delete
+bind-key p open-in-browser
+bind-key P open-all-unread-in-browser
+bind-key o open-in-browser-and-mark-read 
+bind-key O open-all-unread-in-browser-and-mark-read 
+bind-key u toggle-article-read 
+bind-key SPACE toggle-show-read-feeds
+bind-key s sort
+bind-key S rev-sort
