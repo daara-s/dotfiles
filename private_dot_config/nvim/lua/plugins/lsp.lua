@@ -57,7 +57,7 @@ return {
                             init_options = {
                                 settings = {
                                     fixAll = true,
-                                }
+                                },
                             }
                         })
                     end,
