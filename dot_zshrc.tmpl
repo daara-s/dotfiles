@@ -22,7 +22,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-export JAVA_HOME="/opt/homebrew/Cellar/openjdk@11/11.0.22/libexec/openjdk.jdk/Contents/Home"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@11"
 export PATH="$HOME/.local/bin:$PATH"  # poetry
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
@@ -82,6 +82,9 @@ eval "$(zoxide init zsh)" # must run after compinit
 
 source "$HOME"/.work_dotfiles
 export PATH="$HOME/.dotnet/tools:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="$HADOOP_HOME/bin:$PATH"
+export PATH="$SPARK_HOME/bin:$PATH"
 
 
 {{- else }}
