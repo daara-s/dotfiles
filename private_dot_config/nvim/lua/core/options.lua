@@ -26,6 +26,7 @@ vim.opt.updatetime = 50
 
 vim.opt.textwidth = 120
 vim.opt.splitright = true
+vim.opt.splitbelow = true
 vim.g.netrw_liststyle = 3
 
 vim.api.nvim_set_option("clipboard","unnamedplus")
