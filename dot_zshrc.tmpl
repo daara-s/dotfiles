@@ -12,6 +12,7 @@ plugins=(
     zsh-syntax-highlighting
     poetry
     poetry-cmds
+    pytest
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -67,6 +68,7 @@ alias vf='vim $(fzf)'
 alias ls=eza
 alias ll='eza --long'
 alias tree='eza --tree'
+alias die='kill -KILL %1'
 
 autoload -Uz change_directory
 
