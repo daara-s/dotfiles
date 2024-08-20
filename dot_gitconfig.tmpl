@@ -4,12 +4,12 @@
 [init]
 	defaultBranch = master
 [user]
-	name = "Daara Shaw"
-{{- if eq .chezmoi.hostname "dkadmin-MTF9WQPC2P" }}
-   email = "d.shaw@draftkings.com"
-{{- else }}
-   email = "dev@daara.me"
-{{- end }}
+    name = "Daara Shaw"
+{{ if eq .chezmoi.hostname "daarashaw-MTF9WQPC2P" }}
+    email = "d.shaw@draftkings.com"
+{{ else }}
+    email = "dev@daara.me"
+{{ end }}
 [merge]
   tool = "nvim"
   conflictstyle = diff3
