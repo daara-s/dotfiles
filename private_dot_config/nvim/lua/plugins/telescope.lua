@@ -10,27 +10,28 @@ return {
         local telescope = require("telescope")
         local builtin = require('telescope.builtin')
 
-        vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
-        vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = '[F]ind [G]it files' })
-        vim.keymap.set('n', '<leader>fc', builtin.live_grep, { desc = '[F]ind [C]ode' })
+        vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Files' })
+        vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = 'Git files' })
+        vim.keymap.set('n', '<leader>fc', builtin.live_grep, { desc = 'Code' })
         vim.keymap.set('n', '<leader>fs',
             function()
                 builtin.grep_string({ search = vim.fn.input("Grep > ") })
             end,
-            { desc = '[F]ind [S]earch' }
+            { desc = 'Search' }
         )
         vim.keymap.set('n', '<leader>fw',
             function()
                 local word = vim.fn.expand("<cword>")
                 builtin.grep_string({ search = word })
             end,
-            { desc = '[F]ind [w]ord' }
+            { desc = 'Word' }
         )
         vim.keymap.set('n', '<leader>fW',
             function()
                 local word = vim.fn.expand("<cWORD>")
                 builtin.grep_string({ search = word })
-            end
+            end,
+            { desc = 'Whole word' }
         )
         --
         -- This is your opts table
