@@ -6,6 +6,7 @@ return {
             require('mason').setup({})
         end
     },
+    { 'hrsh7th/cmp-nvim-lsp' },
     {
         'williamboman/mason-lspconfig.nvim',
         config = function()
@@ -19,20 +20,43 @@ return {
             end
 
             require('mason-lspconfig').setup({
-                ensure_installed = { "pyright", "ruff_lsp", "lua_ls" },
+                ensure_installed = { "basedpyright", "ruff_lsp", "lua_ls" },
                 handlers = {
                     default_setup,
-                    pyright = function()
-                        lspconfig.pyright.setup({
+                    basedpyright = function()
+                        lspconfig.basedpyright.setup({
                             capabilities = lsp_capabilities,
                             settings = {
-                                pyright = {
-                                    -- eg disableOrganiseImport = true,
-                                    typeCheckingMode = "off",
+                                basedpyright = {
+                                    analysis = {
+                                        autoImportCompletions = true,
+                                        diagnosticMode = "openFilesOnly",
+                                        useLibraryCodeForTypes = true,
+                                        typeCheckingMode = "all",       -- off, basic, strict, all
+                                        diagnosticSeverityOverrides = { -- false, none, information, warning, error, true
+                                            reportMissingTypeStubs = "warning",
+                                            reportImplicitOverride = "warning",
+                                            reportUnsafeMultipleInheritance = false,
+                                            reportIncompatibleMethodOverride = false, -- mypy covered
+                                            reportAny = false,
+                                            reportMissingSuperCall = "warning",
+                                        }
+                                    }
                                 }
                             }
                         })
                     end,
+                    -- pyright = function()
+                    --     lspconfig.pyright.setup({
+                    --         capabilities = lsp_capabilities,
+                    --         settings = {
+                    --             pyright = {
+                    --                 -- eg disableOrganiseImport = true,
+                    --                 typeCheckingMode = "off",
+                    --             }
+                    --         }
+                    --     })
+                    -- end,
                     lua_ls = function()
                         lspconfig.lua_ls.setup({
                             settings = {
@@ -52,7 +76,7 @@ return {
                             }
                         })
                     end,
-                    ruff_lsp = function ()
+                    ruff_lsp = function()
                         lspconfig.ruff_lsp.setup({
                             init_options = {
                                 settings = {
@@ -65,5 +89,4 @@ return {
             })
         end
     },
-    { 'hrsh7th/cmp-nvim-lsp' },
 }
