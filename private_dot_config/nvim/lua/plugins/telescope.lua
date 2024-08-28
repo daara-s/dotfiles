@@ -43,7 +43,7 @@ return {
                         exclude = { 1, -1, -2 }
                     },
                 },
-                file_ignore_patterns = {"poetry.lock"},
+                file_ignore_patterns = { "poetry.lock" },
             },
             extensions = {
                 ["ui-select"] = {
