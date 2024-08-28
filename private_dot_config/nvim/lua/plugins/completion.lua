@@ -5,6 +5,7 @@ return {
         { 'saadparwaiz1/cmp_luasnip' },
         { 'hrsh7th/cmp-buffer' },
     },
+    event = "InsertEnter",
     config = function()
         local cmp = require('cmp')
         local luasnip = require("luasnip")
