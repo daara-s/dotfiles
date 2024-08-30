@@ -32,7 +32,7 @@ return {
                                         autoImportCompletions = true,
                                         diagnosticMode = "openFilesOnly",
                                         useLibraryCodeForTypes = true,
-                                        typeCheckingMode = "all",       -- off, basic, strict, all
+                                        typeCheckingMode = "basic",       -- off, basic, strict, all
                                         diagnosticSeverityOverrides = { -- false, none, information, warning, error, true
                                             reportMissingTypeStubs = "warning",
                                             reportImplicitOverride = "warning",
