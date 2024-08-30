@@ -34,12 +34,13 @@ return {
                                         useLibraryCodeForTypes = true,
                                         typeCheckingMode = "basic",       -- off, basic, strict, all
                                         diagnosticSeverityOverrides = { -- false, none, information, warning, error, true
-                                            reportMissingTypeStubs = "warning",
+                                            reportMissingTypeStubs = "information",
                                             reportImplicitOverride = "warning",
                                             reportUnsafeMultipleInheritance = false,
                                             reportIncompatibleMethodOverride = false, -- mypy covered
                                             reportAny = false,
-                                            reportMissingSuperCall = "warning",
+                                            reportMissingSuperCall = false,
+                                            reportAttributeAccessIssue = "information",
                                         }
                                     }
                                 }
