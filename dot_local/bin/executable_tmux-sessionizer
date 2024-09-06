@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/dev ~/.config -mindepth 1 -maxdepth 1 -type d | fzf --tmux=center --layout=reverse --delimiter=/ --with-nth 4..)
+    selected=$(find ~/dev ~/.config -mindepth 1 -maxdepth 1 -type d | fzf --layout=reverse --delimiter=/ --with-nth 4..)
 fi
 
 if [[ -z $selected ]]; then
