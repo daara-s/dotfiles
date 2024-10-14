@@ -34,7 +34,7 @@ return {
                                         useLibraryCodeForTypes = true,
                                         typeCheckingMode = "basic",       -- off, basic, strict, all
                                         diagnosticSeverityOverrides = { -- false, none, information, warning, error, true
-                                            reportMissingTypeStubs = "information",
+                                            reportMissingTypeStubs = false,
                                             reportImplicitOverride = "warning",
                                             reportUnsafeMultipleInheritance = false,
                                             reportIncompatibleMethodOverride = false, -- mypy covered
