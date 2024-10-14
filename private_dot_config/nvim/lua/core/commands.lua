@@ -3,9 +3,9 @@ vim.api.nvim_create_user_command('Bitbucket', function(opts)
         local file_path = vim.fn.expand('%:p')
 
         if not lines then
-            vim.cmd('!open_in_bitbucket.py ' .. file_path)
+            vim.cmd('silent !open_in_bitbucket.py ' .. file_path)
         else
-            vim.cmd('!open_in_bitbucket.py ' .. file_path .. ' --lines ' .. lines)
+            vim.cmd('silent !open_in_bitbucket.py ' .. file_path .. ' --lines ' .. lines)
         end
     end
 
