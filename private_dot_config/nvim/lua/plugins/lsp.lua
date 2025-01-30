@@ -20,7 +20,7 @@ return {
             end
 
             require('mason-lspconfig').setup({
-                ensure_installed = { "basedpyright", "ruff_lsp", "lua_ls" },
+                ensure_installed = { "basedpyright", "lua_ls", "ruff", },
                 handlers = {
                     default_setup,
                     basedpyright = function()
@@ -32,7 +32,7 @@ return {
                                         autoImportCompletions = true,
                                         diagnosticMode = "openFilesOnly",
                                         useLibraryCodeForTypes = true,
-                                        typeCheckingMode = "basic",       -- off, basic, strict, all
+                                        typeCheckingMode = "basic",     -- off, basic, strict, all
                                         diagnosticSeverityOverrides = { -- false, none, information, warning, error, true
                                             reportMissingTypeStubs = false,
                                             reportImplicitOverride = false,
@@ -77,12 +77,12 @@ return {
                             }
                         })
                     end,
-                    ruff_lsp = function()
-                        lspconfig.ruff_lsp.setup({
+                    ruff = function()
+                        require('lspconfig').ruff.setup({
                             init_options = {
                                 settings = {
-                                    fixAll = true,
-                                },
+                                    -- Ruff language server settings go here
+                                }
                             }
                         })
                     end,
