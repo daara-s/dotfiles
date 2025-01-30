@@ -35,7 +35,7 @@ return {
                                         typeCheckingMode = "basic",       -- off, basic, strict, all
                                         diagnosticSeverityOverrides = { -- false, none, information, warning, error, true
                                             reportMissingTypeStubs = false,
-                                            reportImplicitOverride = "warning",
+                                            reportImplicitOverride = false,
                                             reportUnsafeMultipleInheritance = false,
                                             reportIncompatibleMethodOverride = false, -- mypy covered
                                             reportAny = false,
