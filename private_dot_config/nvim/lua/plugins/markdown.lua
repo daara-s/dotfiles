@@ -4,11 +4,12 @@ return {
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         ft = { "markdown" },
         build = function() vim.fn["mkdp#util#install"]() end,
-        event="VeryLazy",
+        event = "VeryLazy",
     },
     {
         "OXY2DEV/markview.nvim",
         lazy = false, -- Recommended
+        enabled = false,
 
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
